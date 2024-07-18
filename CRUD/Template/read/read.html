@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Data View</title>
+</head>
+
+<body>
+    <h1>User Data View</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Country</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        {% for R in data %}
+        <tbody>
+            <td>{{R.name}}</td>
+            <td>{{R.email}}</td>
+            <td>{{R.Age}}</td>
+            <td>{{R.gender}}</td>
+            <td>{{R.country}}</td>
+            <td><a href="{% url 'delete' R.id %}">
+                Remove
+            </a></td>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
